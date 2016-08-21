@@ -1,0 +1,54 @@
+<div class="list-group cart-list">
+	{{#if carts.data.items}}
+		{{#each carts.data.items as |product|}}
+			<div class="list-group-item clearfix {{product.id}}">
+				<div class="col-md-3">
+					{{#if product.images}}
+						{{#each product.images as |image index|}}
+							{{#if (eq index 0)}}
+								<div style="background-image:url({{image}})" class="product-thumbnail">
+								</div>
+							{{/if}}
+						{{/each}}
+					{{else}}
+						<div style="background-image:url('/images/placeholder.png')" class="product-thumbnail">
+						</div>
+					{{/if}}
+				</div>
+				<div class="col-md-8">
+					<p>{{truncate product.name 40}}</p>
+					<div class="cart-price">
+						{{#if product.price_discount}}
+							<p class="price">{{money-format product.price_discount true}}</p>
+						{{else}}
+							<p class="price">{{money-format product.price true}}</p>
+						{{/if}}
+						<p>x <span class="quantity">{{product.quantity}}</span>  
+							{{fa-icon "minus" class="ml10 mr5 cursorPointer f10" click=(action "removing" product.id product.quantity)}} 
+							{{fa-icon "plus" class="cursorPointer f10" click=(action "adding" product.id product.quantity)}}
+						</p>
+						{{#if false}}
+							<!-- <div class="col-md-12 form-group">
+								<div class="input-group">
+								  <span class="input-group-addon" id="sizing-addon2" {{action "removing" product.id product.quantity}}>{{fa-icon "minus"}}</span>
+								 <input type="text" readonly="readonly" class="form-control" name="quantity" value={{product.quantity}}  onkeyup={{action "changeQuantity" product.id "target.value"}}>
+								  {{!-- {{input keyup=(action "changeQuantity" product.id product.quantity) class="form-control" name="quantity" value=product.quantity}} --}}
+								  <span class="input-group-addon" id="sizing-addon2" {{action "adding" product.id product.quantity}}>{{fa-icon "plus"}}</span>
+								</div>
+							</div> -->
+						{{/if}}
+					</div>
+				</div>
+				<div class="col-md-1">
+					<p class="text-right">{{fa-icon "times" class="text-danger right cursorPointer" click=(action "removeProduct" product.id)}}</p>
+				</div>
+			</div>
+		{{/each}}
+	{{else}}
+	<p class="nocart">
+		<span class="bold mb10">There is no item in your cart yet</span><br>
+		<span class="text-muted">Let's buy some item and click "add to cart"</span>
+	</p>
+	{{/if}}
+</div>
+{{yield}}

@@ -1,0 +1,17 @@
+<div class="col-md-6 col-sm-12 col-xs-12" id="cart-big">
+	{{cart-list}}
+	<div class="bold product-header">
+		<span>Total</span>
+		<span class="pull-right totalNumber">
+			{{#if total}}
+				{{money-format total true}}
+			{{else}}
+				{{fa-icon 'spinner' spin=true}}
+			{{/if}}
+		</span>
+	</div>
+</div>
+<div class="col-md-6">
+	
+</div>
+{{outlet}}

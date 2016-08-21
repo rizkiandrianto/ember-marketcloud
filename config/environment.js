@@ -16,6 +16,17 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    site: {
+      title: 'Lii Shop',
+      api: 'http://api.marketcloud.it/',
+      endpoint: 'v0/',
+      currency: 'Rp. ',
+      headers: {
+        "Authorization": "1a6bd3f4-810e-4b32-84d6-c2b200e34b4a",
+        'Content-Type': 'application/json',
+      }
     }
   };
 

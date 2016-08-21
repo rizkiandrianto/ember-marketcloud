@@ -1,0 +1,22 @@
+<div class="bold product-header">
+	<span>Latest Product</span>
+	{{link-to 'See All Product' 'index' class="hidden-sm hidden-xs"}}
+</div>
+{{product.product-latest}}
+<p class="text-right">{{link-to 'See All Product' 'index' class="hidden-md hidden-lg"}}</p>
+
+<div class="bold product-header mt100">
+	<span>Latest Woman Fashion</span>
+	{{link-to 'More Woman Fashion' 'index'}}
+</div>
+{{product.product-woman}}
+<p class="text-right">{{link-to 'More Woman Fashion' 'index' class="hidden-md hidden-lg"}}</p>
+
+
+<div class="bold product-header mt100">
+	<span>Latest Man Fashion</span>
+	{{link-to 'More Man Fashion' 'index'}}
+</div>
+{{product.product-man}}
+<p class="text-right">{{link-to 'More Man Fashion' 'index' class="hidden-md hidden-lg"}}</p>
+{{outlet}}

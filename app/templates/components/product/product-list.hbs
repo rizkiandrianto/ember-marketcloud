@@ -1,0 +1,6 @@
+<ul class="product-list-ul clearfix">
+  {{#each products key="id" as |product|}}
+    {{product.list-component product=product}}
+  {{/each}}
+</ul>
+{{yield}}

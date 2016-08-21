@@ -6,7 +6,10 @@ module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     // Add options here
   });
+  app.import('vendor/marketcloud/marketcloud.min.js'); // or bower_components
+  app.import('vendor/shims/marketcloud.js');
 
+  app.import('vendor/rizkiandrianto/scripts/public.js')
   // Use `app.import` to add additional libraries to the generated
   // output files.
   //

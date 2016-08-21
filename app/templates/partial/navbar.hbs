@@ -1,0 +1,51 @@
+<div class="jumbotron hidden-sm hidden-xs">
+  <div class="container">
+    <div class="col-md-6">
+      <h1>{{config.site.title}}</h1>
+    </div>
+    <div class="col-md-6 text-right">
+      
+    </div>
+  </div>
+</div>
+
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav">
+            {{#link-to 'index' tagName="li"}}<a href="">Home</a>{{/link-to}}
+            {{#link-to 'product.woman' tagName="li"}}<a href="">Woman Fashion</a>{{/link-to}}
+            {{#link-to 'product.man' tagName="li"}}<a href="">Man Fashion</a>{{/link-to}}
+            {{#link-to 'product.index' tagName="li"}}<a href="">Latest Product</a>{{/link-to}}
+            <!-- {{#link-to 'index' tagName="li"}}<a href="">Cek Resi</a>{{/link-to}} -->
+            {{#link-to 'index' tagName="li"}}<a href="">About Us</a>{{/link-to}}
+            {{#link-to 'index' tagName="li" class="hidden-md hidden-lg"}}<a href="">Cart</a>{{/link-to}}
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right hidden-sm hidden-xs">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cart <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            {{cart-list}}
+            {{#if cart}}
+              {{#link-to "cart.index" class="mr5 mt5 text-right cursorPointer f10" tagName="p"}}
+                View All &#9658;
+              {{/link-to}}
+            {{/if}}
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+
+
+  </div><!-- /.container-fluid -->
+</nav>
