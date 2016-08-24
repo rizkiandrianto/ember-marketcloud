@@ -1,0 +1,55 @@
+<div class="col-md-3 col-xs-12">
+	{{#if model.images}}
+		{{#slick-slider slidesPerRow=1 slidesToShow=1 infinite=false dots=true adaptiveHeight=true}}
+			{{#each model.images as |image|}}
+				<img src="{{image}}">
+			{{/each}}
+		{{/slick-slider}}
+	{{else}}
+		<img src="/images/placeholder.png" width="100%">
+	{{/if}}
+</div>
+<div class="col-md-6 col-xs-12 product-description-big">
+	<h1>{{model.name}}</h1>
+	<h3>
+		{{#if model.price_discount}} 
+			<strong class="product-price text-danger">{{money-format model.price_discount true}}</strong>
+			<del class="text-muted">{{money-format model.price}}</del>
+		{{else}}
+			<strong class="product-price text-danger">{{money-format model.price true}}</strong>
+		{{/if}}
+	</h3>
+	<h5 class="hidden">
+	</h5>
+	<hr class="separator">
+	{{html-parse model.description}}
+</div>
+<div class="col-md-3 col-xs-12 cursorPointer">
+	<div class="bold product-header">
+		<span>Product Detail</span>
+	</div>
+	<div class="product-detail clearfix">
+		{{#if model.weight}}
+			<div class="col-md-6 bBottom" title="Weight">
+				<p>{{fa-icon 'briefcase' class="mr10"}}<span class="visible-xs-inline-block mr5">Weight :</span>{{model.weight}} kg</p>
+			</div>
+		{{/if}}
+		{{#if model.depth}}
+			<div class="col-md-6 bBottom" title="Depth">
+				<p>{{fa-icon 'level-down' class="mr10"}}<span class="visible-xs-inline-block mr5">Depth :</span>{{model.depth}} cm</p>
+			</div>
+		{{/if}}
+		{{#if model.width}}
+			<div class="col-md-6 bBottom" title="Width">
+				<p>{{fa-icon 'arrows-h' class="mr10"}}<span class="visible-xs-inline-block mr5">Width :</span>{{model.width}} cm</p>
+			</div>
+		{{/if}}
+		{{#if model.height}}
+			<div class="col-md-6 bBottom" title="Height">
+				<p>{{fa-icon 'arrows-v' class="mr10"}}<span class="visible-xs-inline-block mr5">Height :</span>{{model.height}} cm</p>
+			</div>
+		{{/if}}
+	</div>
+	<a href="#!" class="mt30 btn btn-primary btn-lg displayBlock">Add to Cart</a>
+</div>
+{{outlet}}

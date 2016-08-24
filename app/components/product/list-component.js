@@ -19,8 +19,8 @@ export default Ember.Component.extend({
 				},(err,cart)=>{
 					if (err) {
 						toastAdded(this.get('toast'), err)	
-						setCookie('cart_id', cart.id);
 					} else {
+						setCookie('cart_id', cart.id);
 						toastAdded(this.get('toast'));
 						addedToCart(parent, id);
 						this.get('shopping').init();
@@ -50,6 +50,7 @@ function addedToCart(parent, id){
 			product.find('span.quantity').text(parseInt(product.find('span.quantity').text()) + 1);
 		}
 		else {
+			Ember.$('.list-group.cart-list').empty();
 			Ember.$(this).append(`
 				<div class="list-group-item clearfix ` + id + `">
 					<div class="col-md-3">

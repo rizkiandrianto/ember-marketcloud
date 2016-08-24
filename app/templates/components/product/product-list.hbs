@@ -1,6 +1,14 @@
 <ul class="product-list-ul clearfix">
-  {{#each products key="id" as |product|}}
-    {{product.list-component product=product}}
-  {{/each}}
+{{#if all}}
+	{{#each products key="id" as |product|}}
+	    {{product.list-component product=product all=all}}
+	{{/each}}
+{{else}}
+	{{#slick-slider slidesPerRow=6 slidesToShow=6 infinite=false responsive=breakpoints}}
+	  {{#each products key="id" as |product|}}
+	    {{product.list-component product=product}}
+	  {{/each}}
+	{{/slick-slider}}
+{{/if}}
 </ul>
 {{yield}}

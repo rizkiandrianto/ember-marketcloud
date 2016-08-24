@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('product', function() {
     this.route('man');
     this.route('woman');
+    this.route('detail', {path: '/:id'});
   });
   this.route('cart', function() {});
 });
