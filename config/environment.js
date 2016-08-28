@@ -26,7 +26,14 @@ module.exports = function(environment) {
       headers: {
         "Authorization": "1a6bd3f4-810e-4b32-84d6-c2b200e34b4a",
         'Content-Type': 'application/json',
-      }
+      },
+      rajaongkir_url: 'http://api.rajaongkir.com/',
+      rajaongkir_endpoint: 'starter/',
+      rajaongkir_api: '58d265972e930c7ab7e016d82d0a0741',
+      rajaongkir_headers: {
+        'key': '58d265972e930c7ab7e016d82d0a0741',
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
     }
   };
 

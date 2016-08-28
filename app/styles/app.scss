@@ -22,6 +22,10 @@ a, a:hover, a:focus {
 	color: initial;
 }
 
+textarea {
+	resize: none;
+}
+
 #main-wrapper {
 	min-height: 100vh;
 	position: relative;
@@ -138,6 +142,12 @@ ul.product-list-ul {
 		min-height: 295px;
 		height: auto;
 		margin-bottom: 10px;
+
+		a {
+			&:hover, &:focus, &:active {
+				text-decoration: none;
+			}
+		}
 	}
 }
 

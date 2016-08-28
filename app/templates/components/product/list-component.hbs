@@ -1,32 +1,32 @@
-{{#link-to 'product.detail' product.id}}
 	<li class="{{if all 'col-md-2 col-sm-4 col-xs-6' 'col-md-12'}} product-loop-li {{product.id}}">
 		<div class="product-loop clearfix">
-			<div class="product-loop-top">
-				{{#if product.images}}
-					{{#each product.images as |image index|}}
-						{{#if (eq index 0)}}
-							<div style="background-image:url({{image}})" class="product-thumbnail">
-							</div>
-						{{/if}}
-					{{/each}}
-				{{else}}
-					<div style="background-image:url('/images/placeholder.png')" class="product-thumbnail">
-					</div>
-				{{/if}}
-				<p class="product-name bold">{{truncate product.name 40}}</p>
-				<p class="text-danger">	
-					{{#if product.price_discount}} 
-						<strong class="product-price">{{money-format product.price_discount true}}</strong>
-						<del class="text-muted">{{money-format product.price}}</del>
+			{{#link-to 'product.detail' product.id}}
+				<div class="product-loop-top">
+					{{#if product.images}}
+						{{#each product.images as |image index|}}
+							{{#if (eq index 0)}}
+								<div style="background-image:url({{image}})" class="product-thumbnail">
+								</div>
+							{{/if}}
+						{{/each}}
 					{{else}}
-						<strong class="product-price">{{money-format product.price true}}</strong>
+						<div style="background-image:url('/images/placeholder.png')" class="product-thumbnail">
+						</div>
 					{{/if}}
-				</p>
-			</div>
+					<p class="product-name bold">{{truncate product.name 40}}</p>
+					<p class="text-danger">	
+						{{#if product.price_discount}} 
+							<strong class="product-price">{{money-format product.price_discount true}}</strong>
+							<del class="text-muted">{{money-format product.price}}</del>
+						{{else}}
+							<strong class="product-price">{{money-format product.price true}}</strong>
+						{{/if}}
+					</p>
+				</div>
+			{{/link-to}}
 			<div class="product-loop-bottom">
 				<a onclick={{action "addToCart" product.id}} class="product-btn-add_to_cart">Add To Cart</a>
 			</div>
 		</div>
 	</li>
-{{/link-to}}
 {{yield}}

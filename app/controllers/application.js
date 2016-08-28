@@ -21,5 +21,5 @@ export default Ember.Controller.extend({
 			}
 		});
 	},
-	cart: getCookie('cart_id'),
+	cart: localStorage.cart_id,
 });

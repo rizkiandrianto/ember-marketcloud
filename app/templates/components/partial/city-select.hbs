@@ -1,0 +1,7 @@
+<select class="form-control">
+	{{#each city as |city|}}
+		<option value="{{city.city_id}}">{{city.city_name}}</option>
+	{{/each}}
+</select>
+
+{{yield}}

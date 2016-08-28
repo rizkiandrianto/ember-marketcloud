@@ -10,5 +10,18 @@ export default Ember.Controller.extend({
 			total += parseInt(price) * parseInt(this.quantity);
 		});
 		this.set('total', total);
+	},
+	actions: {
+		login(){
+			const email = `${this.get('email')}`,
+				fullname = `${this.get('fullname')}`,
+				phone = `${this.get('phone')}`,
+				address = `${this.get('address')}`,
+				city = `${this.get('city')}`,
+				province = `${this.get('province')}`,
+				country = `${this.get('country')}`,
+				postal = `${this.get('postal')}`;
+			console.info(email, fullname);
+		}
 	}
 });

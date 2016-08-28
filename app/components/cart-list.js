@@ -4,7 +4,7 @@ import marketcloud from 'marketcloud';
 
 export default Ember.Component.extend({
 	toast: Ember.inject.service(),
-	cart: getCookie('cart_id'),
+	cart: localStorage.cart_id,
 	loading: true,
 	shopping: Ember.inject.service('shopping-cart'),
 	willRender(){

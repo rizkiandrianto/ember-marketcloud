@@ -8,19 +8,19 @@ export default Ember.Component.extend({
 	actions: {
 		addToCart(id, event){
 			var parent = Ember.$(event.target).closest('li.product-loop-li.' + id );
-			const cart = getCookie('cart_id');
+			const cart = localStorage.cart_id;
 			this.toast.info('Adding to Cart...', 'Please wait', {
 				progressBar: false,
 				timeOut: 0
 			});
-			if (cart === '' || cart === null) {
+			if (cart === '' || cart === null || cart === undefined) {
 				marketcloud.carts.create({
 				  	items:[{'product_id':id,'quantity':1}]
 				},(err,cart)=>{
 					if (err) {
 						toastAdded(this.get('toast'), err)	
 					} else {
-						setCookie('cart_id', cart.id);
+						localStorage.cart_id = cart.id;
 						toastAdded(this.get('toast'));
 						addedToCart(parent, id);
 						this.get('shopping').init();
