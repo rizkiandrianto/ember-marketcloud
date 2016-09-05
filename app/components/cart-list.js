@@ -22,6 +22,8 @@ export default Ember.Component.extend({
 				marketcloud.carts.remove(this.get('cart'),[{'product_id':id}],(err,cart)=>{
 					this.get('shopping').init();
 					this.rerender();
+					localStorage.removeItem('cart_id');
+					localStorage.removeItem('cart_items');
 				});
 			}
 			else {
@@ -36,6 +38,8 @@ export default Ember.Component.extend({
 			marketcloud.carts.remove(this.get('cart'),[{'product_id':id}],(err,cart)=>{
 				this.get('shopping').init();
 				this.rerender();
+				localStorage.removeItem('cart_items');
+				localStorage.removeItem('cart_id');
 			});
 		},
 		changeQuantity(id, quantity, event) {

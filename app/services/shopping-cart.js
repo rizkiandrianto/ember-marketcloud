@@ -9,6 +9,7 @@ export default Ember.Service.extend({
 	 		async: false,
 	    }).then(data => {
 	      this.set('carts', data);
+	      localStorage.setItem('cart_items', JSON.stringify(data.data.items));
 	    });
 	}
 });

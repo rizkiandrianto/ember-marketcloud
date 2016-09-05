@@ -1,2 +1,6 @@
-{{product.product-list products=woman.data}}
+{{#if isLoading}}
+	<p class="text-center">{{fa-icon "spinner" pulse=true}}</p>
+{{else}}
+	{{product.product-list products=woman.data}}
+{{/if}}
 {{yield}}

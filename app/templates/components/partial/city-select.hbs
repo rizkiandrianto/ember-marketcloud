@@ -1,6 +1,6 @@
-<select class="form-control">
+<select class="form-control" name="city" value="city" id="city-select">
 	{{#each city as |city|}}
-		<option value="{{city.city_id}}">{{city.city_name}}</option>
+		<option value="{{city.city_id}}" data-province="{{city.province_id}}">{{city.city_name}}</option>
 	{{/each}}
 </select>
 

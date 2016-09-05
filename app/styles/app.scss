@@ -365,3 +365,7 @@ footer {
     	border: none;
     }
 }
+
+#city-select option:disabled {
+	display: none;
+}

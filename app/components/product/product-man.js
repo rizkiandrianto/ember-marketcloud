@@ -13,5 +13,9 @@ export default Ember.Component.extend({
 	    }).then(data => {
 	      this.set('man', data);
 	    });
+	},
+	isLoading: true,
+	didInsertElement(){
+		this.set('isLoading', false);
 	}
 });

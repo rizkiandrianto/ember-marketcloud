@@ -13,6 +13,10 @@ Router.map(function() {
     this.route('detail', {path: '/:id'});
   });
   this.route('cart', function() {});
+  if (localStorage.getItem('cart_id')) {
+      this.route('cart', function() {});
+  }
+  this.route('not-found', { path: '/*path' });
 });
 
 export default Router;

@@ -1,1 +1,6 @@
+<select class="form-control" name="province" value="province" id="province-select">
+	{{#each province as |province|}}
+		<option value="{{province.province_id}}">{{province.province}}</option>
+	{{/each}}
+</select>
 {{yield}}
